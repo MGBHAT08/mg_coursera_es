@@ -40,6 +40,9 @@ void main() {
   int i=0;
 
   temp_pointer = sort_array(test, SIZE); /* Function call to sort the array*/
+  for (i=0;i<SIZE;i++){
+    data[i] = *(temp_pointer+i);
+  }
   print_statistics(data, SIZE); /* Function call to print the stats of the array*/
   print_array(data, SIZE); /* Function call to print the array*/
 
@@ -60,34 +63,101 @@ char print_statistics(unsigned char data[], int sizes) {
 char print_array(unsigned char data[], int sizes) {
 
 /* Function to print the array*/
+  int i=0;
 
+  printf("[");
+  for (i=0;i<sizes;i++){
+    printf("%d,",data[i]);
+  }
+  printf("]\n");
+  return 0;
 }
 
 char find_maximum(unsigned char data[], int sizes) {
 
 /* Function to find the max value of the array*/
 
+  int i=0;
+  unsigned char maximum;
+  maximum = data[0];
+  for (i=1;i<sizes;i++){
+    if(data[i]>maximum){
+      maximum = data[i];
+    }
+  }
+
+  printf("max value is %d \n",maximum);
+
 }
 
 char find_minimum(unsigned char data[], int sizes) {
 
 /* Function to find the min value of the array*/
+  int i=0;
+  unsigned char minimum;
+  minimum = data[0];
+  for (i=1;i<sizes;i++){
+    if(data[i]<minimum){
+      minimum = data[i];
+    }
+  }
+
+  printf("min value is %d \n",minimum);
 
 }
 
 char find_mean(unsigned char data[], int sizes) {
 
 /* Function to find the mean value of the array*/
+  int i=0;
+  unsigned char mean=0;
+  for (i=1;i<sizes;i++){
+    mean += data[i];
+  }
+  mean = mean / 2;
+
+  printf("mean value is %d \n",mean);
+  return 0;
 }
 
 char find_median(unsigned char data[], int sizes) {
 
 /* Function to find the median value of the array*/
 
+  unsigned char median;
+  int midpoint1, midpoint2;
+
+  if (sizes % 2 == 0){
+    midpoint1 = (sizes / 2);
+    midpoint2 = (sizes / 2)+1;
+    median = (data[midpoint1] + data[midpoint2]) / 2;
+  }
+  else{
+    midpoint1 = (sizes/2)+1;
+    median = data[midpoint1];
+  }
+
+  printf("Median is %d \n", median);
+  return 0;
 }
 
 char *sort_array(unsigned char data[],int sizes) {
 
 /* Function to sort an array in descending order*/
 
+  int i,j;
+  unsigned char temp;
+
+  for (i=0;i<sizes;i++) {
+    for (j=i+1;j<sizes;j++) {
+
+     if (data[i]<data[j]) {
+       temp = data[j];
+       data[j] = data[i];
+       data[i] = temp;
+    }
+  }
+  }
+  print_array(data, sizes);
+  return(data);
 }
