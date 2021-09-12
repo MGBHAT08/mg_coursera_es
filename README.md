@@ -9,13 +9,10 @@
  *
  *****************************************************************************/
 /**
- * @file stats.c 
- * @brief "a simple stats computing code"
- *
- * 
- *
  * @author Mahesh Ganesh Bhat
  * @date 12th Sept. 2021
  *
  */
+ 
+ A simple repository that contains the c code to print some statistics of an array.
 
