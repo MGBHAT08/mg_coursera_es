@@ -9,13 +9,13 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.c 
+ * @brief "a simple stats computing code"
  *
- * <Add Extended Description Here>
+ * 
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Mahesh Ganesh Bhat
+ * @date 12th Sept. 2021
  *
  */
 
@@ -34,10 +34,60 @@ void main() {
                               200, 122, 150, 90,   92,  87, 177, 244,
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
+ 
+  unsigned char data[SIZE];
+  unsigned char *temp_pointer;
+  int i=0;
 
-  /* Other Variable Declarations Go Here */
-  /* Statistics and Printing Functions Go Here */
+  temp_pointer = sort_array(test, SIZE); /* Function call to sort the array*/
+  print_statistics(data, SIZE); /* Function call to print the stats of the array*/
+  print_array(data, SIZE); /* Function call to print the array*/
 
 }
 
-/* Add other Implementation File Code Here */
+char print_statistics(unsigned char data[], int sizes) {
+
+ /* Function to print the array stats such as min, max, mean and median*/
+
+  find_maximum(data, sizes); 
+  find_minimum(data, sizes);
+  find_mean(data, sizes);
+  find_median(data, sizes);
+
+  return 0;
+}
+
+char print_array(unsigned char data[], int sizes) {
+
+/* Function to print the array*/
+
+}
+
+char find_maximum(unsigned char data[], int sizes) {
+
+/* Function to find the max value of the array*/
+
+}
+
+char find_minimum(unsigned char data[], int sizes) {
+
+/* Function to find the min value of the array*/
+
+}
+
+char find_mean(unsigned char data[], int sizes) {
+
+/* Function to find the mean value of the array*/
+}
+
+char find_median(unsigned char data[], int sizes) {
+
+/* Function to find the median value of the array*/
+
+}
+
+char *sort_array(unsigned char data[],int sizes) {
+
+/* Function to sort an array in descending order*/
+
+}

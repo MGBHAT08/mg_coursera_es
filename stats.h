@@ -21,20 +21,40 @@
 #ifndef __STATS_H__
 #define __STATS_H__
 
-/* Add Your Declarations and Function Comments here */ 
+char *sort_array(unsigned char data[],int sizes);
+/* Function to sort an array in descending order.
+ * Takes 2 inputs. An unsigned char array data[] and integer sizes for size of the array
+ * outputs a 1D unsigned char array of size[sizes]
+*/
 
-/**
- * @brief <Add Brief Description of Function Here>
- *
- * <Add Extended Description Here>
- *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- *
- * @return <Add Return Informaiton here>
- */
+char find_mean(unsigned char data[],int sizes);
+/* Function to find mean of an array.
+ * Takes 2 inputs. An unsigned char array data[] and integer sizes for size of the array
+*/
 
+char find_median(unsigned char data[],int sizes);
+/* Function to find median of an array.
+ * Takes 2 inputs. An unsigned char array data[] and integer sizes for size of the array
+*/
+
+char find_maximum(unsigned char data[],int sizes);
+/* Function to find maximum of an array.
+ * Takes 2 inputs. An unsigned char array data[] and integer sizes for size of the array
+*/
+
+char find_minimum(unsigned char data[],int sizes);
+/* Function to find minimum of an array.
+ * Takes 2 inputs. An unsigned char array data[] and integer sizes for size of the array
+*/
+
+char print_statistics(unsigned char data[],int sizes);
+/* Function to print mathematical stats of an array.
+ * Takes 2 inputs. An unsigned char array data[] and integer sizes for size of the array
+*/
+
+char print_array(unsigned char data[],int sizes);
+/* Function to print an array.
+ * Takes 2 inputs. An unsigned char array data[] and integer sizes for size of the array
+*/
 
 #endif /* __STATS_H__ */
